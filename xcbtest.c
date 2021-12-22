@@ -15,6 +15,29 @@ int main() {
     }
 
     setup = xcb_get_setup(connection);
+    printf("setup:\n");
+    printf("status: %d\n", setup->status);
+    printf("pad0: %d\n", setup->pad0);
+    printf("protocol_major_version: %d\n", setup->protocol_major_version);
+    printf("protocol_minor_version: %d\n", setup->protocol_minor_version);
+    printf("length: %d\n", setup->length);
+    printf("release_number: %d\n", setup->release_number);
+    printf("resource_id_base: %d\n", setup->resource_id_base);
+    printf("resource_id_mask: %d\n", setup->resource_id_mask);
+    printf("motion_buffer_size: %d\n", setup->motion_buffer_size);
+    printf("vendor_len: %d\n", setup->vendor_len);
+    printf("maximum_request_length: %d\n", setup->maximum_request_length);
+    printf("roots_len: %d\n", setup->roots_len);
+    printf("pixmap_formats_len: %d\n", setup->pixmap_formats_len);
+    printf("image_byte_order: %d\n", setup->image_byte_order);
+    printf("bitmap_format_bit_order: %d\n", setup->bitmap_format_bit_order);
+    printf("bitmap_format_scanline_unit: %d\n", setup->bitmap_format_scanline_unit);
+    printf("bitmap_format_scanline_pad: %d\n", setup->bitmap_format_scanline_pad);
+    printf("min_keycode: %d\n", setup->min_keycode);
+    printf("max_keycode: %d\n", setup->max_keycode);
+    printf("pad1: [%d, %d, %d, %d]\n", setup->pad1[0], setup->pad1[1], setup->pad1[2], setup->pad1[3]);
+    printf("=================\n");
+
     iterator = xcb_setup_roots_iterator(setup);
     printf("iterator:\n");
     printf("data: %u\n", iterator.data);
